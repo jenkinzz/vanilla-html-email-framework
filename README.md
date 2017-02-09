@@ -1,5 +1,5 @@
-# The Kinder, Gentler HTML Email Framework
-Email frameworks like Foundation and MJML require learning a new quasi-language and can produce a lot of bloat. This is my contribution towards making a kinder, gentler HTML email template.
+# The Vanilla HTML Email Framework
+Email frameworks like Foundation and MJML require learning a new quasi-language and can produce a lot of bloat. This framework uses only vanilla HTML/CSS, accounts for all cross-client quirks, and creates an easy, modular foundation to build emails on.
 
 ## HTML
 Each module is a \<tr> wrapped in beginning and ending comments.
