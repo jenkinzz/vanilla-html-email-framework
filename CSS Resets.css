@@ -1,0 +1,247 @@
+/* --------------------------------
+----------- $CSS Resets$ ----------
+---------------------------------*/
+
+/*-- This <style> block makes sure the email displays uniformly
+ across all email clients.
+
+Generally, you shouldn't modify this style block. Override these
+base styles in the next style block instead, so you can easily
+update these resets when a new version is released.
+
+When copying this style block to other emails, be sure to include
+the style block of outlook fixes wrapped in conditional code,
+directly below this one.--*/
+
+body {
+    width: 100% !important;
+    margin: 0;
+    padding: 0;
+    -webkit-text-size-adjust: none;
+    -ms-text-size-adjust: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+}
+
+.ExternalClass * { /* fixes line-height and padding issues in outlook */
+    line-height: 100%; /*This needs to be above the real line-height declaration or else it will override it*/
+    padding: 0px;
+    margin: 0px;
+}
+
+v\:* { /* outlook image fixes for 120dpi */
+    behavior: url(#default#VML);
+    display: inline-block;
+}
+
+div#body-fix {  /* #body-fix stretches to cover the whole body, fixes background color in Yahoo */
+    box-sizing: border-box;
+    width: 100%;
+    padding: 5px; /* just to keep things off the edges */
+}
+
+table { /* Resets for outlook */
+    border-collapse: collapse;
+    mso-table-lspace: 0;
+    mso-table-rspace: 0;
+}
+
+table#header-container,
+table#email-container,
+table#footer-container { /* sets the bounds of the email content, uses #body-fix to center itself */
+    max-width: 700px; /* email width */
+    min-width: 200px; /* minimum mobile width */
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 2px;
+}
+table#header-container td,
+table#email-container td,
+table#footer-container td {
+    border-radius: 2px;
+}
+
+td {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    line-height: 21px; /* must be on td for Outlook */
+}
+
+p {
+    margin:0;
+    padding:0;
+    margin-bottom:0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+h7 {
+    margin: 0px;
+}
+
+img {
+    margin: 0;
+    padding: 0;
+}
+
+a img {
+    border: none;
+}
+
+sup {
+    position: relative;
+    vertical-align:super;
+    font-size:10px;
+    line-height:8px;
+}
+
+hr {
+    width: 94%;
+    border-top: 1px solid #cccccc;
+    border-bottom: 1px solid #ffffff;
+}
+
+
+/* -- $Base styles for template parts$ -- */
+
+.container {
+    padding: 20px;
+}
+
+.title {
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 34px;
+    width: 100%;
+}
+.title a,
+a.title {
+  text-decoration: none;
+}
+
+.content {
+    padding: 15px 0 15px 0;
+}
+
+.col1 {
+     padding-right: 10px;
+}
+.col2 {
+    padding-left: 10px;
+}
+
+.button {
+    display: inline-block;
+    text-align: center;
+    text-decoration: none !important;
+    font-weight: bold;
+    border-radius: 5px;
+    border: 1px solid #000;
+}
+.button td {
+    padding: 10px; /* Has to be on td for mobile, b/c of display: table in media query */
+}
+.button a {
+    text-decoration: none;
+}
+
+/* -- $Useful Class Declarations$ -- */
+
+.left {
+    text-align: left;
+}
+.right {
+    text-align: right;
+}
+.center {
+    text-align: center;
+}
+.justify {
+    text-align: justify;
+}
+
+.top {
+    vertical-align: top;
+}
+.middle {
+    vertical-align: middle;
+}
+.baseline {
+    vertical-align: baseline;
+}
+.bottom {
+    vertical-align: bottom;
+}
+
+.big {
+    font-size: 120%;
+}
+.small {
+    font-size: 80%;
+}
+
+.hide {
+    display: none !important;
+}
+.mobile { /* Will only display on mobile */
+    width: 0;
+    max-height: 0;
+    overflow: hidden;
+    float: left;
+    display: none;
+}
+
+
+/* -- $Mobile Settings$ -- */
+
+@media only screen and (max-width: 600px) { /*Change this px count to adjust the break point */
+
+     .mobile {
+        display : block !important;
+         width : 100% !important;
+        max-height: inherit !important;
+        overflow : visible !important;
+        float : none !important;
+    }
+    .desktop {
+        display: none !important;
+    }
+
+    .full,
+    .half {
+        display: block !important;
+        margin-right: auto !important;
+        margin-left: auto !important;
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+        text-align: center !important;
+        padding-top: 10px !important;
+        padding-bottom: 10px !important;
+    }
+    .full {
+        width: 100% !important;
+      float: none !important;
+    }
+    .half {
+        width: 50% !important;
+        float: left !important;
+    }
+
+    .button { /* Center buttons in mobile */
+        margin-left: auto !important;
+        margin-right: auto !important;
+        display: table !important;
+    }
+
+}/* end 600px @media query*/
+@media only screen and (max-width: 460px) {
+    .half {
+        width: 100% !important;
+      float: none !important;
+    }
+}/* end 460px @media query */
