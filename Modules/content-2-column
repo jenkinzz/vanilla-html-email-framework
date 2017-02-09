@@ -1,0 +1,22 @@
+<!-- Content-2-Column Start -->
+<tr>
+    <td class="container">
+        <table width="100%" cellspacing="0" cellpadding="0" border="0">
+            <tr>
+                <td class="full col1 center">
+                    Column 1<br />
+                    <a target="_blank" href="">
+                        <img src="http://placehold.it/260x150/00bce7/ffffff" alt="" width="250">
+                    </a>
+                </td>
+                <td class="full col2 center">
+                    Column 2<br />
+                    <a target="_blank" href="">
+                        <img src="http://placehold.it/260x150/00bce7/ffffff" alt="" width="250">
+                    </a>
+                </td>
+            </tr>
+        </table>
+    </td>
+</tr>
+<!-- Content-2-Column End -->

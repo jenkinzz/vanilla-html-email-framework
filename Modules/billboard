@@ -1,0 +1,9 @@
+    <td>
+        <a href="">
+        <!--[if !mso]><!-->
+        <img border="0" alt="Download images" src="http://placehold.it/700x250/00bce7/ffffff?text=700+x+250+Mobile" class="mobile"><!--This image will only appear on mobile-->
+        <!--<![endif]-->
+        <img border="0" alt="Download images" src="http://placehold.it/700x250/00bce7/ffffff?text=700+x+250+Desktop" class="desktop"><!--This image will only appear on desktop-->
+        </a>
+    </td>
+</tr>
