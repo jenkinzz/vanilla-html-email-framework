@@ -1,6 +1,8 @@
 # The Vanilla HTML Email Framework
 Email frameworks like Foundation and MJML require learning a new quasi-language and can produce a lot of bloat. This framework uses only vanilla HTML/CSS, accounts for all cross-client quirks, and creates an easy, modular foundation to build emails on.
 
+vanilla-html-email-framework/CSS-Resets.css
+
 ## HTML
 Each module is a \<tr> wrapped in beginning and ending comments.
 Within each \<tr> is a \<td>, then the content. Usually the content is wrapped by a \<table>. 
