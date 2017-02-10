@@ -1,1 +1,10 @@
 theme: jekyll-theme-cayman
+
+# Setup
+title:        The Vanilla HTML Email Framework
+tagline:      A powerful email framework built on vanilla HTML/CSS
+
+# About/contact
+author:       jenkinzz
+  name:       Jason Jensen
+  url:        http://jasonjensen.co
