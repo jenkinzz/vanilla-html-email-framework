@@ -29,19 +29,18 @@
 <style>
 @import url(||FONT URL||);
 </style>
-<!--End font calls-->
 
 <!-- Link in the CSS Resets -->
-<link rel="stylesheet" type="text/css" href="http://git.jasonjensen.co/CSS-Resets.css">
+<link rel="stylesheet" type="text/css" href="http://git.jasonjensen.co/src/main.css">
 
 <!-- Override the external fonts for Outlook, because they'll break it -->
-<!--[if mso]><!-->
+<!--[if mso]>
 <style type=”text/css”>
     body {
        font-family: Arial, sans-serif;
     }
 </style>
-<!--><![endif]-->
+<![endif]-->
 
 <style>
 
@@ -75,17 +74,30 @@
 <td>
 <![endif]-->
 <!--Dont Delete anything between here and the opening body tag-->
+<div class="hide">||PREVIEW TEXT||</div><!--This hidden div will display as the preview text in the inbox.-->
 <table id="header-container" width="100%" cellspacing="0" cellpadding="0" border="0">
-
-
+  <tr>
+    <td class="center">
+      ||VIEW IN BROWSER||
+    </td>
+  </tr>
 </table>
 <table id="email-container" width="100%" cellspacing="0" cellpadding="0" border="0">
-
-
+  <tr>
+    <td class="container">
+      <h1>Hello World!</h1>
+        <p>
+          Type your email here!
+        </p>
+    </td>
+  </tr>
 </table>
 <table id="footer-container" width="100%" cellspacing="0" cellpadding="0" border="0">
-
-
+  <tr>
+    <td class="center">
+      ||CAN SPAM||
+    </td>
+  </tr>
 </table>
 <!--Don't delete anything between here and the end of the email-->
 <!--[if mso]>
