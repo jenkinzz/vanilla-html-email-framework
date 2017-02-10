@@ -1,18 +1,16 @@
-<!-- Content-with-Title Start-->
 <tr>
     <td class="container">
         <table width="100%" cellspacing="0" cellpadding="0" border="0" >
             <tr>
-                <td class="title">
-                Article title
+                <td>
+                <h1>Article title</h1>
                 </td>
             </tr>
             <tr>
-                <td class="content">
+                <td>
                 text text text
                 </td>
             </tr>
         </table>
     </td>
 </tr>
-<!-- Content-with-Title End -->  
