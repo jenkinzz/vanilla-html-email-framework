@@ -1,124 +1,33 @@
 # The Vanilla HTML Email Framework
-Email frameworks like Foundation and MJML require learning a new quasi-language and can produce a lot of bloat. This framework uses only vanilla HTML/CSS, accounts for all cross-client quirks, and creates an easy, modular foundation to build emails on.
 
-[the css](src/main.css)
+The Vanilla Framework is a lean HTML template combined with an external CSS stylesheet to make emails easy.
 
-## HTML
-Each module is a \<tr> wrapped in beginning and ending comments.
-Within each \<tr> is a \<td>, then the content. Usually the content is wrapped by a \<table>. 
-Anything inside the \<td> will not expand past the template. No max-width declarations are necessary.
-All styles should be in CSS,
-width="100%" cellpadding/spacing/border on \<table> is an exception.
-height and width on resized (but only resized!) \<img>s is an exception.
-The template is currently compliant with this rule except for a few align="" attributes that need to be replaced with a text-align: ; on the \<td>.
+Vanilla leverages CSS inliners to allow designers to use the full power of HTML/CSS to build robust emails, while still displaying uniformly across all clients. No additional software or coding languages are required.
 
-## CSS
+## Quick start
+Choose one of the following options:
+* Download the latest release [here](https://github.com/jenkinzz/vanilla-html-email-framework/releases) and open Getting Started.txt 
+* Just link the CSS Resets into your template like so: `<link rel="stylesheet" type="text/css" href="http://git.jasonjensen.co/src/main.css">`
 
-### Available classes and id's
+Make sure to inline your CSS before sending. I recommend [Putsmail](https://putsmail.com/inliner)
 
-**Module Groups:**
-.secondary
-.tertiary
+## Features
+* Uses only vanilla HTML/CSS
+* As semantic and lean as possible. No useless nested tables
+* CSS is embedded, not inlined, so you can use classes, ids, and selectors
+* Includes useful snippets and example templates
+* Modular design for mixing and matching
+* Comments to guide you, and cheat-sheets for reference
 
-**Module Names:**
-\#footer 
-.spacer
-.hr
-\#{you decide}
+## Client Support
+All clients are supported unless listed here:
 
-**Module Modifiers:**
-.big
-.small
-.{you decide}
-
-**Module Parts:**
-.background
-.title
-.content
-.image
-.button
-.col1
-.col2
-
-**Placement Designators**
-.left
-.right
-.center
-.justify
-.top
-.middle
-.bottom
-
-**Responsive Designators**
-.half
-.full
-.mobile
-.desktop
-
-### Usage
-
-* **Module Groups** define types of modules
-  * Should be placed on the \<tr> wrapping the module
-  * All modules are "primary" if they don't have a group assigned.
-* **Module Names** identify the module
-  * Should be placed on the \<tr> wrapping the module
-  * The specific module names listed are reserved. They have styles baked into the core css boilerplate.
-* **Module Modifiers** combine with other classes to address specific cases
-  * Can be placed on any element
-* **Module Parts** define pieces of the modules
-  * Should be placed on the smallest \<td> practicable, and always td's to ensure outlook compatibility
-  * .container is an exception, should be placed on largest \<td>
-  * Simply not defining a module part with one of these classes is preferable to defining it & using css to undo the default module part styles
-* **Responsive Designators** identify elements to show/hide on mobile
-  * Can be placed on any element
-  * These classes need additional code to actually show/hide. See snippets section.
-
-Example usage:
-```html
-<tr id="module-name" class="secondary">
-  <td class="background">
+Mostly Supported:
+* Outlook 2003
+  * Ignores email width
+* Android IMAP
+  * Ignores media queries
+  * Ignores font-family
   
-    <table>
-      <tr>
-        <td class="title">
-          All work and no play
-        </td>
-        <td class="image">
-          <img src="" class="mobile">
-          <img src="" class="desktop">
-        </td>
-      </tr>
-      <tr>
-        <td class="content big">
-          All work and no play makes Jack a sad boy.
-        </td>
-        <td class="content">
-          All work and no play makes Jack a sad boy.All work and no play makes Jack a sad boy.All work and no play makes Jack a sad boy.All work and no play makes Jack a sad boy.
-        </td>
-      </tr>
-    </table>
-    
-  </td>
-</tr>
-```
-and the CSS:
-```css
-.secondary {
-/* these styles affect all the secondary modules */
-}
-
-.secondary .content {
-/* makes the content in secondary modules different */
-}
-
-#module-name .content.big {
-/* styles elements designated "content" and "big" within the #module. While you could technically just use .content.big, adding the module name allows us to find the related html easier and eliminates conflicts with other modules that might have a "big" class. */
-}
-```
-
-**NOTE:** The template contains 3 \<style> blocks, each for different purposes. If the above example was real, the "#module-name .content.big" selector would be in a different \<style> block. Read the comments in the template's \<style> blocks for more info.
-
-**NOTE:** The default font-family and email width must be set seperately for outlook, using the conditional code found after the 1st style block and inside the body tags, respectively.
-
-## Content & Snippets
-Placeholder images can be generated by making using Placehold.it, i.e. http://placehold.it/150x100/00bce7/ffffff?text=Logo
+Unsupported:
+* Lotus Notes
