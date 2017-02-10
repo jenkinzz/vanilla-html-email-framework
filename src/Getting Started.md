@@ -11,6 +11,7 @@ All you need to do is start building! Below are some conventions to follow and r
 ## Necessary Conventions
 The following are things you must do for the template to render correctly. Unfortunately, email design still has many quirks and it's hard to find other solutions. Until then, make sure you:
 * Inline your CSS before sending. I recommend [Putsmail](http://putsmail.com/inliner)
+* Declare background color on `#body-fix`, not `<body>`, for Yahoo compatability.
 * Resize images using both `width=""` and `style="width:;"`. Outlook only recognizes the former, while all other clients respect the latter.
 * Classes that deal with margin and padding must be declared on a `<td>`, for Outlook compatability. Declaring all classes on a `<td>` unless abolutely necessary is a good idea. 
 * Buttons are made by adding the `.button` class to a `<table>`. See the file in `examples/` for more information.
