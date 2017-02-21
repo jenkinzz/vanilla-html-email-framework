@@ -2,7 +2,7 @@
 
 The Vanilla Framework is a lean HTML template combined with an external CSS stylesheet to make emails easy.
 
-Vanilla leverages CSS inliners to allow designers to use the full power of HTML/CSS to build robust emails, while still displaying uniformly across all clients. No additional software or coding languages are required.
+Vanilla leverages CSS inliners to allow designers to use the full power of HTML/CSS when they build emails, while still displaying uniformly across all clients. No additional software or coding languages are required, just vanilla HTML/CSS (Hence, the name).
 
 ## Quick start
 Choose one of the following options:
@@ -12,14 +12,17 @@ Choose one of the following options:
 
 Make sure to inline your CSS before sending. I recommend [Putsmail](https://putsmail.com/inliner)
 
+## Why should I use Vanilla?
+It is more robust than other HTML frameworks, but easier to use than MJML or Foundation. Its goal is to allow developers to use as many of HTML & CSS's features as possible without creating a learning curve.  
+
 ## Features
 
 * Uses only vanilla HTML/CSS
-* As semantic and lean as possible. No useless nested tables
+* As semantic and lean as possible. No useless nested tables or memorizing rules-of-thumb
 * CSS is embedded, not inlined, so you can use classes, ids, and selectors
 * Includes useful snippets and example templates
 * Modular design for mixing and matching
-* Comments to guide you, and cheat-sheets for reference
+* Comments to guide you, and documentation for reference
 
 ## Client Support
 All clients are supported unless listed here:
