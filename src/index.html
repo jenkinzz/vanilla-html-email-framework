@@ -39,6 +39,15 @@
     body {
        font-family: Arial, sans-serif;
     }
+    .ExternalClass * { /* fixes line-height and padding issues in outlook */
+       line-height: 100%; /*This needs to be above the real line-height declaration or else it will override it*/
+       padding: 0px;
+       margin: 0px;
+    }
+    v\:* { /* outlook image fixes for 120dpi */
+       behavior: url(#default#VML);
+       display: inline-block;
+    }
 </style>
 <![endif]-->
 
