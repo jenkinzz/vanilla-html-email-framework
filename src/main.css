@@ -23,17 +23,6 @@ body {
     font-size: 14px;
 }
 
-.ExternalClass * { /* fixes line-height and padding issues in outlook */
-    line-height: 100%; /*This needs to be above the real line-height declaration or else it will override it*/
-    padding: 0px;
-    margin: 0px;
-}
-
-v\:* { /* outlook image fixes for 120dpi */
-    behavior: url(#default#VML);
-    display: inline-block;
-}
-
 div#body-fix {  /* #body-fix stretches to cover the whole body, fixes background color in Yahoo */
     box-sizing: border-box;
     width: 100%;
