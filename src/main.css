@@ -111,38 +111,6 @@ hr {
 }
 
 
-/* -- $Base styles for template parts$ -- */
-
-.container {
-    padding: 20px;
-}
-
-.column {
-  padding-left: 5px;
-    padding-right: 5px;
-}
-.column:first-child {
-  padding-left: 0px;
-}
-.column:last-child {
-  padding-right: 0px;
-}
-
-.button {
-    display: inline-block;
-    text-align: center;
-    text-decoration: none !important;
-    font-weight: bold;
-    border-radius: 5px;
-    border: 1px solid #000;
-}
-.button td {
-    padding: 10px; /* Has to be on td for mobile, b/c of display: table in media query */
-}
-.button a {
-    text-decoration: none;
-}
-
 /* -- $Useful Class Declarations$ -- */
 
 .left {
@@ -194,7 +162,51 @@ hr {
 }
 
 
-/* -- $Mobile Settings$ -- */
+/* -- $Base styles for template parts$ -- */
+
+.container {
+    padding: 20px;
+}
+
+.column {
+  padding-left: 5px;
+    padding-right: 5px;
+}
+.column:first-child {
+  padding-left: 0px;
+}
+.column:last-child {
+  padding-right: 0px;
+}
+
+.button {
+    display: inline-block;
+    text-align: center;
+    text-decoration: none !important;
+    font-weight: bold;
+    border-radius: 5px;
+    border: 1px solid #000;
+}
+.button td {
+    padding: 10px; /* Has to be on td for mobile, b/c of display: table in media query */
+}
+.button a {
+    text-decoration: none;
+}
+
+.video-wrapper {display:none;}
+@media (-webkit-min-device-pixel-ratio: 0) and (min-device-width:1024px) {
+    .video-wrapper { display:block!important; }
+    .video-fallback { display:none!important; }
+}
+@supports (-webkit-overflow-scrolling:touch) and (color:#ffffffff) {
+    div[class^=video-wrapper] { display:block!important; }
+    div[class^=video-fallback] { display:none!important; }
+}
+#MessageViewBody .video-wrapper { display:block!important; }
+#MessageViewBody .video-fallback { display:none!important; }
+
+/* -- $Responsive Rules$ -- */
 
 @media only screen and (max-width: 600px) { /*Change this px count to adjust the break point */
 
