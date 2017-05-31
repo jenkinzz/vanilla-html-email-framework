@@ -13,29 +13,27 @@ When copying this style block to other emails, be sure to include
 the style block of outlook fixes wrapped in conditional code,
 directly below this one.--*/
 
+html,
 body {
+    margin: 0 auto !important;
+    padding: 0 !important;
+    height: 100% !important;
     width: 100% !important;
-    margin: 0;
-    padding: 0;
     -webkit-text-size-adjust: none;
     -ms-text-size-adjust: none;
-    font-family: Arial, Helvetica, sans-serif; /* Font is also declared on #body-fix and in Outlook conditional code in the head of index.html */
-    font-size: 14px;
 }
 
 div#body-fix {  /* #body-fix stretches to cover the whole body, fixes background color in Yahoo */
     box-sizing: border-box;
     width: 100%;
-    padding: 5px; /* just to keep things off the edges */
-    font-family: Arial, Helvetica, sans-serif; /* Make yahoo recognize our font */
+    font-size: 14px;
 }
 
 table { /* Resets for outlook */
     border-collapse: collapse;
-    mso-table-lspace: 0;
-    mso-table-rspace: 0;
+    mso-table-lspace: 0pt !important;
+    mso-table-rspace: 0pt !important;
 }
-
 table#header-container,
 table#email-container,
 table#footer-container { /* sets the bounds of the email content, uses #body-fix to center itself */
@@ -43,25 +41,19 @@ table#footer-container { /* sets the bounds of the email content, uses #body-fix
     min-width: 200px; /* minimum mobile width */
     margin-left: auto;
     margin-right: auto;
-    border-radius: 2px;
 }
-table#header-container td,
-table#email-container td,
-table#footer-container td {
-    border-radius: 2px;
-}
-
 td {
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
-    line-height: 21px; /* must be on td for Outlook */
+    font-family: Arial, sans-serif; /* All typography must occur on the td for maximum compatibility */
+    line-height: 21px;
 }
 
 p {
     margin: 0;
+   	margin-bottom:0;
     padding: 0;
-    margin-bottom:0;
 }
 
 h1,
@@ -89,10 +81,11 @@ h2 {
 }
 
 img {
-    margin: 0;
+	max-width: 100%;
+	margin: 0;
     padding: 0;
+    -ms-interpolation-mode:bicubic;
 }
-
 a img {
     border: none;
 }
@@ -110,9 +103,32 @@ hr {
     border-bottom: 1px solid #ffffff;
 }
 
+*[x-apple-data-detectors] { /* Undo automatic link detecting in iOS... */
+    color: inherit !important;
+    text-decoration: none !important;
+}
+.aBn,
+.x-gmail-data-detectors,
+.x-gmail-data-detectors * { /*  ...and Gmail */
+    border-bottom: 0 !important;
+    cursor: default !important;
+}
+
+.a6S { /* Remove download button on Gmail images */
+	display: none !important;
+    opacity: 0.01 !important;
+}
+img.g-img + div { /* Fallback solution for the same */
+    display:none !important;
+}
+
 
 /* -- $Useful Class Declarations$ -- */
 
+.container {
+    padding: 20px;
+}
+    
 .left {
     text-align: left;
 }
@@ -164,10 +180,7 @@ hr {
 
 /* -- $Base styles for template parts$ -- */
 
-.container {
-    padding: 20px;
-}
-
+/* Column Rules */
 .column {
   padding-left: 5px;
     padding-right: 5px;
@@ -178,22 +191,24 @@ hr {
 .column:last-child {
   padding-right: 0px;
 }
-
+    
+/* Button Module */
 .button {
     display: inline-block;
-    text-align: center;
-    text-decoration: none !important;
-    font-weight: bold;
+   	border: 1px solid #000;
     border-radius: 5px;
-    border: 1px solid #000;
+    text-align: center;
+    font-weight: bold;
+    text-decoration: none !important;
 }
 .button td {
-    padding: 10px; /* Has to be on td for mobile, b/c of display: table in media query */
+	padding: 10px; /* Has to be on td for mobile, b/c of display: table in media query */
 }
 .button a {
-    text-decoration: none;
+    text-decoration: none !important;
 }
-
+    
+/* Video Module */
 .video-wrapper {display:none;}
 @media (-webkit-min-device-pixel-ratio: 0) and (min-device-width:1024px) {
     .video-wrapper { display:block!important; }
@@ -206,10 +221,10 @@ hr {
 #MessageViewBody .video-wrapper { display:block!important; }
 #MessageViewBody .video-fallback { display:none!important; }
 
+    
 /* -- $Responsive Rules$ -- */
 
 @media only screen and (max-width: 600px) { /*Change this px count to adjust the break point */
-
      .mobile {
         display : block !important;
          width : 100% !important;
@@ -250,7 +265,6 @@ hr {
         margin-right: auto !important;
         display: table !important;
     }
-
 }/* end 600px @media query*/
 @media only screen and (max-width: 460px) {
     .half {
