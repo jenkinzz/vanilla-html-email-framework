@@ -3,14 +3,6 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/><!-- Make things look good in 120DPI Outlook-->
-<!-- Help outlook render images-->
-<!--[if gte mso 9]><xml>
- <o:OfficeDocumentSettings>
-  <o:AllowPNG/>
-  <o:PixelsPerInch>96</o:PixelsPerInch>
- </o:OfficeDocumentSettings>
-</xml><![endif]-->
-<!-- End outlook render images -->
 
 <!--Meta tags to populate social share components-->
 <meta content="website" property="og:type">
@@ -25,20 +17,20 @@
 
 <!-- Call external fonts here, if you need them -->
 <link href='||FONT URL||' rel='stylesheet' type='text/css'>
-<!-- Also call fonts in the CSS here for maximum compatibilty -->
 <style>
 @import url(||FONT URL||);
 </style>
 
-<!-- Link in the CSS Resets -->
-<link rel="stylesheet" type="text/css" href="http://git.jasonjensen.co/src/main.css">
 
-<!-- Override the external fonts for Outlook, because they'll break it -->
+<!-- Outlook specific fixes-->
+<!--[if gte mso 9]><xml>
+ <o:OfficeDocumentSettings>
+  <o:AllowPNG/>
+  <o:PixelsPerInch>96</o:PixelsPerInch>
+ </o:OfficeDocumentSettings>
+</xml><![endif]-->
 <!--[if mso]>
 <style type=”text/css”>
-    body {
-       font-family: Arial, sans-serif;
-    }
     .ExternalClass * { /* fixes line-height and padding issues in outlook */
        line-height: 100%; /*This needs to be above the real line-height declaration or else it will override it*/
        padding: 0px;
@@ -50,29 +42,31 @@
     }
 </style>
 <![endif]-->
+    
+<!-- Link in the CSS Resets -->
+<link rel="stylesheet" type="text/css" href="http://git.jasonjensen.co/src/main.css">
 
 <style>
 
-    /*   TEMPLATE NAME:     ||NAME||   */
+/*   TEMPLATE NAME:  ||NAME HERE|| */
 
-    /* This <style> block takes the email from the raw
-    boilerplate to a re-usable email template, enabling you to
-    give multiple emails the same feel by copy-and-pasting this
-    style block. Anything written here will override the resets
-    in the style block above.
-    */
+/* This <style> block takes the email from the raw
+boilerplate to a re-usable email template, enabling you to
+give multiple emails the same feel by copy-and-pasting this
+style block. Anything written here will override the resets
+in the style block above.
+*/
 
-
-
-</style>
+</style> 
 <style>
-    /*-- This <style> is space adress quirks that arise in
-    particular emails. This allows the above template to be
-    updated easily, while making sure every email looks perfect.
-    --*/
+/*-- This <style> is space adress quirks that arise in
+particular emails. This allows the above template to be
+updated easily, while making sure every email looks perfect.
+ --*/
 
 
 </style>
+
 </head>
 
 <body>
@@ -92,14 +86,36 @@
   </tr>
 </table>
 <table id="email-container" width="100%" cellspacing="0" cellpadding="0" border="0">
+    
+  <tr>
+    <td>
+        <a href="">
+        <!--[if !mso]><!-->
+        <img border="0" alt="Download images" src="http://placehold.it/700x250/00bce7/ffffff?text=700+x+250+Mobile" class="mobile" width=""><!--This image will only appear on mobile-->
+        <!--<![endif]-->
+        <img border="0" alt="Download images" src="http://placehold.it/700x250/00bce7/ffffff?text=700+x+250+Desktop" class="desktop" width=""><!--This image will only appear on desktop-->
+        </a>
+    </td>
+  </tr>
+    
   <tr>
     <td class="container">
       <h1>Hello World!</h1>
         <p>
           Type your email here!
         </p>
+    	
+		<table class="button" cellspacing="0" cellpadding="0" border="0">
+    		<tr>
+        		<td>
+           			<a href="" target="_blank">CTA</a>
+        		</td>
+    		</tr>
+ 		</table>
+        
     </td>
   </tr>
+
 </table>
 <table id="footer-container" width="100%" cellspacing="0" cellpadding="0" border="0">
   <tr>
