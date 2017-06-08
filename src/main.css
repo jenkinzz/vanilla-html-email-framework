@@ -48,6 +48,7 @@ td {
     -webkit-box-sizing: border-box;
     font-family: Arial, sans-serif; /* All typography must occur on the td for maximum compatibility */
     line-height: 21px;
+    color: #000000;
 }
 
 p {
