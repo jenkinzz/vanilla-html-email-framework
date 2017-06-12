@@ -206,7 +206,7 @@ img.g-img + div { /* Fallback solution for the same */
 	padding: 10px; /* Has to be on td for mobile, b/c of display: table in media query */
 }
 .button a {
-    text-decoration: none !important;
+    text-decoration: none;
 }
     
 /* Video Module */
